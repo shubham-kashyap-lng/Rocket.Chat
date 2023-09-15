@@ -1,5 +1,5 @@
 import { Sidebar } from '@rocket.chat/fuselage';
-import { useUser, useTranslation } from '@rocket.chat/ui-contexts';
+import { useUser, useTranslation, useRole } from '@rocket.chat/ui-contexts';
 import type { ReactElement } from 'react';
 import React, { memo } from 'react';
 
@@ -22,6 +22,7 @@ import Sort from './actions/Sort';
 const Header = (): ReactElement => {
 	const t = useTranslation();
 	const user = useUser();
+	const isAdmin = useRole('admin');
 
 	return (
 		<Sidebar.TopBar.Section>
@@ -29,7 +30,7 @@ const Header = (): ReactElement => {
 			<Sidebar.TopBar.Actions>
 				<Home title={t('Home')} />
 				<Search title={t('Search')} />
-				{user && (
+				{user && isAdmin && (
 					<>
 						<Directory title={t('Directory')} />
 						<Sort title={t('Display')} />
