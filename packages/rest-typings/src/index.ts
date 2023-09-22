@@ -48,6 +48,7 @@ import type { UsersEndpoints } from './v1/users';
 import type { VideoConferenceEndpoints } from './v1/videoConference';
 import type { VoipEndpoints } from './v1/voip';
 import type { WebdavEndpoints } from './v1/webdav';
+import type { TestingEndPoints, OrgDetailEndPoints } from './v1/myCustom';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export interface Endpoints
@@ -99,6 +100,8 @@ export interface Endpoints
 		CalendarEndpoints,
 		AuthEndpoints,
 		ImportEndpoints,
+		TestingEndPoints,
+		OrgDetailEndPoints,
 		DefaultEndpoints {}
 
 type OperationsByPathPatternAndMethod<
