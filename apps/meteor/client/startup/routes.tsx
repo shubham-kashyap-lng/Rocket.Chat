@@ -24,6 +24,7 @@ const ResetPasswordPage = lazy(() =>
 const OAuthAuthorizationPage = lazy(() => import('../views/oauth/OAuthAuthorizationPage'));
 const OAuthErrorPage = lazy(() => import('../views/oauth/OAuthErrorPage'));
 const NotFoundPage = lazy(() => import('../views/notFound/NotFoundPage'));
+const MyPaymentsCard = lazy(() => import('../views/home/cards/MyPaymentsCard'));
 
 declare module '@rocket.chat/ui-contexts' {
 	interface IRouterPaths {
@@ -109,6 +110,10 @@ declare module '@rocket.chat/ui-contexts' {
 			pathname: `/saml/${string}`;
 			pattern: '/saml/:token';
 		};
+		'myplan': {
+			pathname: `/myplan/${string}`;
+			pattern: '/myplan/:emailid'
+		}
 	}
 }
 
@@ -234,6 +239,15 @@ router.defineRoutes([
 		path: '/saml/:token',
 		id: 'saml',
 		element: appLayout.wrap(<SAMLLoginRoute />),
+	},
+	{
+		path: '/myplan/:emailid',
+		id: 'myplan',
+		element: appLayout.wrap(
+			<MainLayout>
+				<MyPaymentsCard />
+			</MainLayout>,
+		),
 	},
 	{
 		path: '*',
