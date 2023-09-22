@@ -1,0 +1,53 @@
+import { Box, Button, Margins } from '@rocket.chat/fuselage';
+import type { ReactElement } from 'react';
+import React from 'react';
+import { useSetModal } from '@rocket.chat/ui-contexts';
+import CancelPaymentModal from './CancelPaymentModal';
+import { useEndpoint } from '@rocket.chat/ui-contexts';
+import { useQuery } from '@tanstack/react-query';
+
+
+const MyPaymentsCard = (): ReactElement => {
+	
+	const setModal = useSetModal();
+	const openCancelPaymentModal = (): void => setModal(<CancelPaymentModal onClose={(): void => setModal(null)} />);
+
+	const getDummyData = useEndpoint('GET', '/v1/testing');
+	const resultData: any = useQuery(['dummyData'], () => getDummyData(), {
+		keepPreviousData: true,
+	});	
+
+	return (
+		<Box bg='tint' height='100%' >
+			<Margins block='x90'>
+				<Box is='div' m='auto' height='75%' width='75%' z={99} bg='light' color='default' >
+					<Box>
+						<Box is='header'
+						minHeight='x64'
+						p={16} 
+						mb={16}
+						textAlign='center'
+						fontSize='hero'
+						data-qa-id='my-subscription-header'>
+							My Subscription
+						</Box>
+						<Box is='div' p={32}>
+							<ul>
+								{resultData?.data?.resInfo.map((user: any) => {
+									return (
+										<li><strong>Name:</strong> {user?.name} <strong>UsernName:</strong>  {user?.username}</li>
+									)
+								})}
+							</ul>
+						</Box>
+						<Box display='flex' justifyContent='flex-end' p={16} pbs={64}>
+							<Button m='2px' danger onClick={openCancelPaymentModal}>Cancel Subscription</Button>
+						</Box>
+					</Box>
+				</Box>
+			</Margins>
+		</Box>
+	);
+};
+
+export default MyPaymentsCard;
