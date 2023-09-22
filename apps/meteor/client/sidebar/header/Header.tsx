@@ -1,5 +1,5 @@
-import { Sidebar } from '@rocket.chat/fuselage';
-import { useUser, useTranslation, useRole } from '@rocket.chat/ui-contexts';
+import { Sidebar, Button } from '@rocket.chat/fuselage';
+import { useUser, useTranslation, useRole, useRouter } from '@rocket.chat/ui-contexts';
 import type { ReactElement } from 'react';
 import React, { memo } from 'react';
 
@@ -24,12 +24,23 @@ const Header = (): ReactElement => {
 	const user = useUser();
 	const isAdmin = useRole('admin');
 
+	const router = useRouter();
+	const handleClick = () => {
+		return router.navigate('/myplan/emailId')
+	}
+
 	return (
 		<Sidebar.TopBar.Section>
 			{user ? <UserMenu user={user} /> : <UserAvatarWithStatus />}
 			<Sidebar.TopBar.Actions>
 				<Home title={t('Home')} />
 				<Search title={t('Search')} />
+				{ user && !isAdmin && 
+					(
+						<Button success onClick={handleClick}>My Plan</Button>
+					)
+				}
+				
 				{user && isAdmin && (
 					<>
 						<Directory title={t('Directory')} />
