@@ -23,6 +23,7 @@ const Header = (): ReactElement => {
 	const t = useTranslation();
 	const user = useUser();
 	const isAdmin = useRole('admin');
+	const isOwner = useRole('owner');
 
 	const router = useRouter();
 	const handleClick = () => {
@@ -35,7 +36,7 @@ const Header = (): ReactElement => {
 			<Sidebar.TopBar.Actions>
 				<Home title={t('Home')} />
 				<Search title={t('Search')} />
-				{ user && !isAdmin && 
+				{ user && !isAdmin && !user.roles.includes('owner') &&
 					(
 						<Button success onClick={handleClick}>My Plan</Button>
 					)
