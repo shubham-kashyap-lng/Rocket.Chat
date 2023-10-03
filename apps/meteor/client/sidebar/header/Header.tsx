@@ -23,11 +23,14 @@ const Header = (): ReactElement => {
 	const t = useTranslation();
 	const user = useUser();
 	const isAdmin = useRole('admin');
-	const isOwner = useRole('owner');
+	const isOwner = user?.roles?.includes('owner');
 
 	const router = useRouter();
 	const handleClick = () => {
 		return router.navigate('/myplan/emailId')
+	}
+	const handleClickFAQ = () => {
+		return router.navigate('/faqpage/emailId');
 	}
 
 	return (
@@ -36,9 +39,15 @@ const Header = (): ReactElement => {
 			<Sidebar.TopBar.Actions>
 				<Home title={t('Home')} />
 				<Search title={t('Search')} />
-				{ user && !isAdmin && !user.roles.includes('owner') &&
+
+				{user && !isAdmin &&
 					(
-						<Button success onClick={handleClick}>My Plan</Button>
+						<Button medium backgroundColor='#01A19A' color='#233502' onClick={handleClickFAQ}>FAQ</Button>
+					)
+				}
+				{user && !isAdmin && !isOwner &&
+					(
+						<Button medium backgroundColor='#99CA41' color='#233502' onClick={handleClick}>My Plan</Button>
 					)
 				}
 				

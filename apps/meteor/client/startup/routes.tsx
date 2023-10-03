@@ -25,6 +25,7 @@ const OAuthAuthorizationPage = lazy(() => import('../views/oauth/OAuthAuthorizat
 const OAuthErrorPage = lazy(() => import('../views/oauth/OAuthErrorPage'));
 const NotFoundPage = lazy(() => import('../views/notFound/NotFoundPage'));
 const MyPaymentsCard = lazy(() => import('../views/home/cards/MyPaymentsCard'));
+const FAQPage = lazy(() => import('../views/home/FAQ/FAQPage'));
 
 declare module '@rocket.chat/ui-contexts' {
 	interface IRouterPaths {
@@ -113,7 +114,12 @@ declare module '@rocket.chat/ui-contexts' {
 		'myplan': {
 			pathname: `/myplan/${string}`;
 			pattern: '/myplan/:emailid'
-		}
+		};
+		'faqpage': {
+			pathname: `/faqpage/${string}`;
+			pattern: '/faqpage/:emailid'
+		};
+
 	}
 }
 
@@ -246,6 +252,15 @@ router.defineRoutes([
 		element: appLayout.wrap(
 			<MainLayout>
 				<MyPaymentsCard />
+			</MainLayout>,
+		),
+	},
+	{
+		path: '/faqpage/:emailid',
+		id: 'faqpage',
+		element: appLayout.wrap(
+			<MainLayout>
+				<FAQPage />
 			</MainLayout>,
 		),
 	},
