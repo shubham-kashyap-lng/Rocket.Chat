@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 import { KonchatNotification } from '../../../app/ui/client/lib/KonchatNotification';
 import CustomHomePage from './CustomHomePage';
 import DefaultHomePage from './DefaultHomePage';
+import HomePageVideo from './dashBoard/HomePageVideo';
 
 const HomePage = (): ReactElement => {
 	useEffect(() => {
@@ -17,7 +18,8 @@ const HomePage = (): ReactElement => {
 		return <CustomHomePage />;
 	}
 
-	return <DefaultHomePage />;
+	// return <DefaultHomePage />;
+	return <HomePageVideo />
 };
 
 export default HomePage;
