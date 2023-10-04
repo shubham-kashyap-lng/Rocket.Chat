@@ -42,12 +42,12 @@ const Header = (): ReactElement => {
 
 				{user && !isAdmin &&
 					(
-						<Button medium backgroundColor='#01A19A' color='#233502' onClick={handleClickFAQ}>FAQ</Button>
+						<Button medium backgroundColor='#01A19A' onClick={handleClickFAQ}>FAQ</Button>
 					)
 				}
 				{user && !isAdmin && !isOwner &&
 					(
-						<Button medium backgroundColor='#99CA41' color='#233502' onClick={handleClick}>My Plan</Button>
+						<Button medium backgroundColor='#01A19A' onClick={handleClick}>My Plan</Button>
 					)
 				}
 				

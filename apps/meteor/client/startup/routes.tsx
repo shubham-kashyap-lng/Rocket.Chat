@@ -24,8 +24,8 @@ const ResetPasswordPage = lazy(() =>
 const OAuthAuthorizationPage = lazy(() => import('../views/oauth/OAuthAuthorizationPage'));
 const OAuthErrorPage = lazy(() => import('../views/oauth/OAuthErrorPage'));
 const NotFoundPage = lazy(() => import('../views/notFound/NotFoundPage'));
-const MyPaymentsCard = lazy(() => import('../views/home/cards/MyPaymentsCard'));
 const FAQPage = lazy(() => import('../views/home/FAQ/FAQPage'));
+const MyPlanPage = lazy(() => import('../views/home/myPlan/MyPlanPage'));
 
 declare module '@rocket.chat/ui-contexts' {
 	interface IRouterPaths {
@@ -251,7 +251,7 @@ router.defineRoutes([
 		id: 'myplan',
 		element: appLayout.wrap(
 			<MainLayout>
-				<MyPaymentsCard />
+				<MyPlanPage />
 			</MainLayout>,
 		),
 	},

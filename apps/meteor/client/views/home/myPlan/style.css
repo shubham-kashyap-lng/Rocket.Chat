@@ -1,0 +1,140 @@
+.myplan {
+    padding: 60px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.light {
+    background: #F1EFEF;
+    /* background: linear-gradient(50deg, rgba(238,174,202,1) 22%, rgba(148,187,233,1) 100%); */
+}
+
+.dark {
+    background: rgb(57, 56, 74);
+    background: linear-gradient(50deg, rgba(57, 56, 74, 1) 22%, rgba(45, 87, 161, 1) 100%);
+}
+
+.myplan-container {
+    max-width: 1200px;
+}
+
+.myplan-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.myplan-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.col-md-12 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.myplan-block h2 {
+    text-align: center;
+    font-size: 36px;
+    /* font-weight: 300; */
+    padding-bottom: 3rem;
+    align-self: flex-start;
+}
+
+.h2-dark {
+    color: #fff;
+}
+
+.h2-light {
+    color: #152231;
+}
+
+.myplan .myplan-block {
+    width: 100% !important;
+    height: auto;
+    padding: 3rem;
+    /* padding-top: 2rem !important; */
+    border-radius: 25px;
+}
+
+.myplan-block-dark {
+    background-color: #152231;
+}
+
+.myplan-block-light {
+    /* background-color:  #AED2FF; */
+    background: linear-gradient(50deg, rgba(109,107,142,1) 0%, rgba(62,226,214,1) 100%);
+}
+
+.myplan .myplan-content {
+    min-height: 45vh;
+    min-width: 35vw;
+    /* background: radial-gradient(circle, rgba(108,181,135,1) 3%, rgba(1,161,154,1) 100%); */
+    border-radius: 25px;
+    padding: 3rem 1rem 0rem 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.myplan-content-dark {
+    background: radial-gradient(circle, rgba(108, 181, 135, 1) 3%, rgba(1, 161, 154, 1) 100%);
+}
+
+.myplan-content-light {
+    /* background: #fff; */
+    background: radial-gradient(circle, rgba(108,181,135,1) 7%, rgba(173,218,216,1) 100%);
+}
+
+ul {
+    align-self: flex-start;
+    text-align: start;
+    padding-block: 2rem;
+    list-style: circle !important;
+}
+
+li {
+    padding-bottom: 0.5rem !important;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+
+/* media Queries */
+@media (max-width: 1200px) {
+    .myplan-container {
+        max-width: 1140px;
+    }
+}
+
+@media (max-width: 992px) {
+    .myplan-container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 768px) {
+    .myplan-container {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 576px) {
+    .myplan-container {
+        max-width: 540px;
+    }
+}
