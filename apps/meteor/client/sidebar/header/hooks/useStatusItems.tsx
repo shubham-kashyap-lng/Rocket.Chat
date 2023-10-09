@@ -72,6 +72,6 @@ export const useStatusItems = (user: IUser): GenericMenuItemProps[] => {
 	return [
 		...(presenceDisabled ? [presenceDisabledItem] : []),
 		...statusItems,
-		{ id: 'custom-status', icon: 'emoji', content: t('Custom_Status'), onClick: handleCustomStatus, disabled: presenceDisabled },
+		// { id: 'custom-status', icon: 'emoji', content: t('Custom_Status'), onClick: handleCustomStatus, disabled: presenceDisabled },
 	];
 };

@@ -36,6 +36,7 @@
     flex-wrap: wrap;
     margin-left: -15px;
     margin-right: -15px;
+    margin-block: -2rem;
 }
 
 .col-md-12 {

@@ -46,12 +46,12 @@ export const useAccountItems = (): GenericMenuItemProps[] => {
 			content: t('Profile'),
 			onClick: handleMyAccount,
 		},
-		{
-			id: 'preferences',
-			icon: 'customize',
-			content: t('Preferences'),
-			onClick: handlePreferences,
-		},
+		// {
+		// 	id: 'preferences',
+		// 	icon: 'customize',
+		// 	content: t('Preferences'),
+		// 	onClick: handlePreferences,
+		// },
 		{
 			id: 'accessibility',
 			icon: 'person-arms-spread',

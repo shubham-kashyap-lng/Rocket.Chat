@@ -18,11 +18,11 @@ export const {
 		icon: 'user',
 		permissionGranted: (): boolean => settings.get('Accounts_AllowUserProfileChange'),
 	},
-	{
-		href: '/account/preferences',
-		i18nLabel: 'Preferences',
-		icon: 'customize',
-	},
+	// {
+	// 	href: '/account/preferences',
+	// 	i18nLabel: 'Preferences',
+	// 	icon: 'customize',
+	// },
 	{
 		href: '/account/security',
 		i18nLabel: 'Security',

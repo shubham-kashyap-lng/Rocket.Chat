@@ -162,7 +162,7 @@ const AccessibilityPage = () => {
 									</FieldRow>
 									<FieldDescription mb={12}>{t('Adjustable_font_size_description')}</FieldDescription>
 								</Field>
-								<Field>
+								{/* <Field>
 									<Box display='flex' flexDirection='row' justifyContent='spaceBetween' flexGrow={1}>
 										<FieldLabel htmlFor={fontSizeId}>
 											{t('Mentions_with_@_symbol')}
@@ -198,7 +198,7 @@ const AccessibilityPage = () => {
 									>
 										{t('Mentions_with_@_symbol_description')}
 									</FieldDescription>
-								</Field>
+								</Field> */}
 								<Field>
 									<FieldLabel htmlFor={clockModeId}>{t('Message_TimeFormat')}</FieldLabel>
 									<FieldRow>

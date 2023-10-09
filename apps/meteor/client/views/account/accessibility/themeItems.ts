@@ -9,12 +9,12 @@ export const themeItems = [
 		title: 'Theme_dark',
 		description: 'Theme_dark_description',
 	},
-	{
-		isEEOnly: true,
-		id: 'high-contrast',
-		title: 'Theme_high_contrast',
-		description: 'Theme_high_contrast_description',
-	},
+	// {
+	// 	isEEOnly: true,
+	// 	id: 'high-contrast',
+	// 	title: 'Theme_high_contrast',
+	// 	description: 'Theme_high_contrast_description',
+	// },
 	{
 		id: 'auto',
 		title: 'Theme_match_system',
